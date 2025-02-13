@@ -142,30 +142,30 @@ const showcase: { title: string; href: string; description: string; id: number; 
 const legal: { title: string; href: string; description: string }[] = [
   {
     title: "Legal",
-    href: "/docs/primitives/alert-dialog",
+    href: "/legal",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
     title: "Terms & Conditions",
-    href: "/docs/primitives/hover-card",
+    href: "/terms",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
     title: "Privacy Policy",
-    href: "/docs/primitives/progress",
+    href: "/privacy",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Code of Conduct",
-    href: "/docs/primitives/scroll-area",
+    href: "/code-of-conduct",
     description: "Visually or semantically separates content.",
   },
   {
     title: "Ethics",
-    href: "/docs/primitives/tabs",
+    href: "/ethics",
     description:
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
@@ -281,7 +281,7 @@ export function NavigationMenuDemo() {
                 <ListItem
                   key={legal.title}
                   title={legal.title}
-                  href={about.href}
+                  href={legal.href}
                 >
                   {legal.description}
                 </ListItem>
