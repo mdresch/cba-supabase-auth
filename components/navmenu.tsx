@@ -52,7 +52,7 @@ const about: { title: string; href: string; description: string }[] = [
   },
 ]
 
-const showcase: { title: string; href: string; description: string; id: string; name: string; category: string; image: string; details: string}[] = [
+const showcase: { title: string; href: string; description: string; id: number; name: string; category: string; image: string; details: string}[] = [
   {
     id: 1,
     name: "TechAI",
