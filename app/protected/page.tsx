@@ -1,38 +1,39 @@
-import FetchDataSteps from "@/components/tutorial/fetch-data-steps";
-import { createClient } from "@/utils/supabase/server";
-import { InfoIcon } from "lucide-react";
-import { redirect } from "next/navigation";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import HeroSection from "@/components/hero-section"
 
-export default async function ProtectedPage() {
-  const supabase = await createClient();
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return redirect("/sign-in");
-  }
-
+export default function Home() {
   return (
-    <div className="flex-1 w-full flex flex-col gap-12">
-      <div className="w-full">
-        <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
-          <InfoIcon size="16" strokeWidth={2} />
-          This is a protected page that you can only see as an authenticated
-          user
-        </div>
-      </div>
-      <div className="flex flex-col gap-2 items-start">
-        <h2 className="font-bold text-2xl mb-4">Your user details</h2>
-        <pre className="text-xs font-mono p-3 rounded border max-h-32 overflow-auto">
-          {JSON.stringify(user, null, 2)}
-        </pre>
-      </div>
-      <div>
-        <h2 className="font-bold text-2xl mb-4">Next steps</h2>
-        <FetchDataSteps />
+    <div>
+      <HeroSection />
+      <div className="container mx-auto px-4 py-12">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-card p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">Cutting-edge Technology</h2>
+            <p className="text-card-foreground">
+              Our solutions leverage the latest advancements in AI and machine learning.
+            </p>
+          </div>
+          <div className="bg-card p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">Scalable Solutions</h2>
+            <p className="text-card-foreground">Our products grow with your business, ensuring long-term success.</p>
+          </div>
+          <div className="bg-card p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">Expert Support</h2>
+            <p className="text-card-foreground">
+              Our team of experts is always ready to assist you with any questions or issues.
+            </p>
+          </div>
+        </section>
+
+        <section className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">Ready to transform your business?</h2>
+          <Button asChild>
+            <Link href="/contact">Contact Us</Link>
+          </Button>
+        </section>
       </div>
     </div>
-  );
+  )
 }
+
