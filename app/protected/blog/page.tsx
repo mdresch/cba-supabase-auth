@@ -1,5 +1,5 @@
 import Link from "next/link"
-import blogPost from "./[slug]/page"
+
 
 
 export default function BlogIndex() {
