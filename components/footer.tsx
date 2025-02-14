@@ -1,6 +1,6 @@
 import Link from "next/link"
 import NewsletterForm from "./newsletter-form"
-import { ThemeSwitcher } from "/Users/menno/Source/Repos/cba-supabase-auth/components/theme-switcher"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 export default function Footer() {
   return (
     <footer className="bg-gray-100">
