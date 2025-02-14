@@ -3,9 +3,7 @@ import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
 import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import HeroSection from "@/components/hero-section"
-import FeatureSection from "@/components/features"
 import CuttingEdgeSection from "@/components/cutting-edge"
-import KnowledgeAreaSection from "@/components/knowledgeareas"
 import TransformBusinessSection from "@/components/transformbusiness"
 
 export default async function Home() {

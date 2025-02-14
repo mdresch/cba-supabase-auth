@@ -12,10 +12,7 @@ export default function TransformBusinessSection() {
     <Button asChild>
       <Link href="/contact">Contact Us</Link>
     </Button>
-    
-    <Button asChild>
-    <Link href="/docs">Documentation</Link>
-    </Button>
+
   </section>
   )
 }

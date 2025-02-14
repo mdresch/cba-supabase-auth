@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-
+import { Cpu, SignpostBig, Book } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
@@ -185,9 +185,9 @@ export function NavigationMenuDemo() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    
+                    <Cpu className="w-10 h-10 mb-2 text-primary" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Home
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and
@@ -212,6 +212,23 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Showcase</NavigationMenuTrigger>
           <NavigationMenuContent>
+          <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[750px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="/protected/showcase"
+                  >
+                    <SignpostBig className="w-10 h-10 mb-2 text-primary" />
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      Showcase
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      Showcases wherby our value proposition and value creation alligned with our core values.
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {showcase.map((showcase) => (
                 <ListItem
@@ -222,6 +239,7 @@ export function NavigationMenuDemo() {
                   {showcase.description}
                 </ListItem>
               ))}
+            </ul>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -251,9 +269,9 @@ export function NavigationMenuDemo() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    
+                    <Book className="w-10 h-10 mb-2 text-primary" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Documentation
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and

@@ -11,9 +11,11 @@ export default async function AuthButton() {
   const supabase = await createClient();
 
   const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    data: { session }, // Get the session object
+  } = await supabase.auth.getSession(); // Use getSession()
 
+    console.log("Session details:", session); // log the session object
+    
   if (!hasEnvVars) {
     return (
       <>
@@ -51,9 +53,9 @@ export default async function AuthButton() {
       </>
     );
   }
-  return user ? (
+  return session ? ( // Check session instead of user
     <div className="flex items-center gap-4">
-        <NavigationMenuDemo />
+    <NavigationMenuDemo /> {/* Navigation menu for when user is logged in */} 
           
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
