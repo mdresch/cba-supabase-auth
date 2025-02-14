@@ -17,36 +17,36 @@ import {
 const about: { title: string; href: string; description: string }[] = [
   {
     title: "About Us",
-    href: "/docs/primitives/alert-dialog",
+    href: "/protected/about",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
     title: "Mission Statement",
-    href: "/docs/primitives/hover-card",
+    href: "/protected/mission",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
     title: "Vision Statement",
-    href: "/docs/primitives/progress",
+    href: "/protected/vision",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Core Values",
-    href: "/docs/primitives/scroll-area",
+    href: "/protected/core-values",
     description: "Visually or semantically separates content.",
   },
   {
     title: "Purpose Statement",
-    href: "/docs/primitives/tabs",
+    href: "/protected/purpose-statement",
     description:
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
   {
     title: "Company History",
-    href: "/docs/primitives/tooltip",
+    href: "/protected/company-history",
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
@@ -142,30 +142,30 @@ const showcase: { title: string; href: string; description: string; id: number; 
 const legal: { title: string; href: string; description: string }[] = [
   {
     title: "Legal",
-    href: "/legal",
+    href: "/protected/legal",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
     title: "Terms & Conditions",
-    href: "/terms",
+    href: "/protected/terms",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
     title: "Privacy Policy",
-    href: "/privacy",
+    href: "/protected/privacy",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Code of Conduct",
-    href: "/code-of-conduct",
+    href: "/protected/code-of-conduct",
     description: "Visually or semantically separates content.",
   },
   {
     title: "Ethics",
-    href: "/ethics",
+    href: "/protected/ethics",
     description:
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
@@ -197,13 +197,13 @@ export function NavigationMenuDemo() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="About Us">
+              <ListItem href="/protected/about" title="About Us">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="/docs/installation" title="Account">
+              <ListItem href="/protected/account" title="Account">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Legal">
+              <ListItem href="/protected/legal" title="Legal">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
@@ -263,10 +263,10 @@ export function NavigationMenuDemo() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Blog">
+              <ListItem href="protected/blog" title="Blog">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="/docs/installation" title="Documentation">
+              <ListItem href="protected/docs" title="Documentation">
                 How to install dependencies and structure your app.
               </ListItem>
               
