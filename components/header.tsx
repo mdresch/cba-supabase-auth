@@ -7,6 +7,42 @@ import { createClient } from "@/utils/supabase/server";
 import { ThemeSwitcher } from "./theme-switcher";
 import { NavigationMenuDemo } from "@/components/navmenu";
 
+const navItems = [
+   { href: "/", label: "Client" },
+  {
+    label: "Account",
+    children: [
+      { href: "/protected/dashboard", label: "Dashboard" },
+      { href: "//protected/account", label: "Account" },
+    ],
+  },
+  // { label: "About",
+  //  children: [
+  //    { href: "/about", label: "About Us" },
+  //    { href: "/mission", label: "Mission" },
+  //    { href: "/vision", label: "Vision" },
+  //    { href: "/core-values", label: "Core Values" },
+  //    { href: "/purpose-statement", label: "Purpose Statement" },
+  //    { href: "/company-history", label: "Company History" },
+  //  ],
+  //},
+  //{ href: "/showcase", label: "Showcase" },
+  //{ href: "/blog", label: "Blog" },
+  //{ href: "/docs", label: "Docs" },
+  //{ href: "/dashboard", label: "Dashboard" },
+  //{ href: "/contact", label: "Contact" },
+ // {
+    //label: "Legal",
+    //children: [
+      //{ href: "/terms", label: "Terms" },
+      //{ href: "/privacy", label: "Privacy" },
+      //{ href: "/code-of-conduct", label: "Code of Conduct" },
+      //{ href: "/ethics", label: "Ethics" },
+    //],
+  //}, 
+]
+
+
 export default async function AuthButton() {
   const supabase = await createClient();
 
@@ -56,10 +92,32 @@ export default async function AuthButton() {
   return session ? ( // Check session instead of user
     <div className="flex items-center gap-4">
     <NavigationMenuDemo /> {/* Navigation menu for when user is logged in */} 
-
-      <Link href="/protected/account" className="text-muted-foreground hover:text-foreground transition-colors">
-        Account
-      </Link>    
+    <nav className="hidden lg:flex space-x-4 items-center">
+            {navItems.map((item, index) => (
+              <div key={index} className="relative group">
+                {item.href ? (
+                  <Link href={item.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <>
+                    <span className="text-muted-foreground hover:text-foreground cursor-pointer">{item.label}</span>
+                    <div className="absolute left-0 mt-2 w-48 bg-background rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      {item.children?.map((child, childIndex) => (
+                        <Link
+                          key={childIndex}
+                          href={child.href}
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </nav>
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
           Sign out

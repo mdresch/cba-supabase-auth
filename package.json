@@ -23,6 +23,7 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^12.4.2",
     "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.475.0",
     "next": "latest",
     "next-mdx-remote": "^5.0.0",
@@ -36,6 +37,7 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.15",
     "@types/node": "22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "19.0.2",
