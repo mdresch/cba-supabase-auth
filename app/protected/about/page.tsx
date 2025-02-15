@@ -27,7 +27,7 @@ const features = [
     icon: SignpostBig,
     title: "Purpose Statment",
     description: "To empower businesses through innovative technology, enabling them to thrive in the digital age.",
-    href: "/protected/purpose"
+    href: "/protected/purpose-statement"
   },
 ]
 

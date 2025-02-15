@@ -14,6 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
+
 const about: { title: string; href: string; description: string }[] = [
   {
     title: "About Us",
@@ -304,6 +305,36 @@ export function NavigationMenuDemo() {
                   {legal.description}
                 </ListItem>
               ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+        <NavigationMenuTrigger>Account</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="account"
+                  >
+                    <Book className="w-10 h-10 mb-2 text-primary" />
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      Account
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      Message to the user regarding the additional access granted by submitting their username
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <ListItem href="protected/dashboard" title="Dashboard">
+                Dashboard components built using some care.
+              </ListItem>
+              <ListItem href="account" title="Account">
+                How to install dependencies and structure your app.
+              </ListItem>
+              
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
