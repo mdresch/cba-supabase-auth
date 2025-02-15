@@ -4,11 +4,11 @@ import { getDocument } from "@/lib/markdown"
 import { Settings } from "@/lib/meta"
 import { PageRoutes } from "@/lib/pageroutes"
 import { Typography } from "@/components/ui/typography"
-import { BackToTop } from "@/app/docs/components/navigation/backtotop"
-import Feedback from "@/app/docs/components/navigation/feedback"
-import PageBreadcrumb from "@/app/docs/components/navigation/pagebreadcrumb"
-import Pagination from "@/app/docs/components/navigation/pagination"
-import Toc from "@/app/docs/components/navigation/toc"
+import { BackToTop } from "@/app/components/navigation/backtotop"
+import Feedback from "@/app/components/navigation/feedback"
+import PageBreadcrumb from "@/app/components/navigation/pagebreadcrumb"
+import Pagination from "@/app/components/navigation/pagination"
+import Toc from "@/app/components/navigation/toc"
 
 type PageProps = {
   params: Promise<{ slug: string[] }>

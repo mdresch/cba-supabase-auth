@@ -11,7 +11,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { SheetClose } from "@/components/ui/sheet"
-import Anchor from "@/app/docs/components/navigation/anchor"
+import Anchor from "@/app/components/navigation/anchor"
 
 function isRoute(
   item: Paths

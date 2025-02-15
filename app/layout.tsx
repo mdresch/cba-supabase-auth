@@ -1,71 +1,70 @@
-import { EnvVarWarning } from "@/components/env-var-warning";
-import Header from "@/components/header";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
-import { Geist } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import Link from "next/link";
-import "./globals.css";
-import Footer from "@/components/footer";
-import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from "next"
+import { GoogleTagManager } from "@next/third-parties/google"
+import { GeistMono } from "geist/font/mono"
+import { GeistSans } from "geist/font/sans"
+import { Settings } from "@/lib/meta"
+import { Footer } from "@/app/components/navigation/footer"
+import { Navbar } from "@/app/components/navigation/navbar"
+import { ThemeProvider } from "./components/theme-provider"
 
+import "./globals.css"
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+const baseUrl = Settings.metadataBase
 
-export const metadata = {
-  metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
-};
-
-const geistSans = Geist({
-  display: "swap",
-  subsets: ["latin"],
-});
+export const metadata: Metadata = {
+  title: Settings.title,
+  metadataBase: new URL(baseUrl),
+  description: Settings.description,
+  keywords: Settings.keywords,
+  openGraph: {
+    type: Settings.openGraph.type,
+    url: baseUrl,
+    title: Settings.openGraph.title,
+    description: Settings.openGraph.description,
+    siteName: Settings.openGraph.siteName,
+    images: Settings.openGraph.images.map((image) => ({
+      ...image,
+      url: `${baseUrl}${image.url}`,
+    })),
+  },
+  twitter: {
+    card: Settings.twitter.card,
+    title: Settings.twitter.title,
+    description: Settings.twitter.description,
+    site: Settings.twitter.site,
+    images: Settings.twitter.images.map((image) => ({
+      ...image,
+      url: `${baseUrl}${image.url}`,
+    })),
+  },
+  alternates: {
+    canonical: baseUrl,
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={geistSans.className} suppressHydrationWarning>
-      <Analytics />
-      <body className="bg-background text-foreground">
+    <html lang="en" suppressHydrationWarning>
+      {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-20 items-center">
-              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-                <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                  <div className="flex gap-5 items-center font-semibold">
-                    <Link href={"/"}>CBA Starter</Link>
-                    <div className="flex items-center gap-2">
-                    </div>
-                  </div>
-                  
-                  {!hasEnvVars ? <EnvVarWarning /> : <Header />}
-                  
-                </div>
-              </nav>
-              <div className="flex flex-col gap-20 max-w-5xl p-5">
-                {children}
-              </div>
-
-              <footer>
-                <Footer />
-              </footer>
-            </div>
-          </main>
+          <Navbar />
+          <main className="px-5 sm:px-8 h-auto">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

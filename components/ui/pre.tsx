@@ -1,6 +1,6 @@
 import { ComponentProps } from "react"
 
-import Copy from "@/app/docs/components/markdown/copy"
+import Copy from "@/app/components/markdown/copy"
 
 export default function Pre({
   children,

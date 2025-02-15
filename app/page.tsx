@@ -1,22 +1,28 @@
-import Hero from "@/components/hero";
-import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
-import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
-import HeroSection from "@/components/hero-section"
-import CuttingEdgeSection from "@/components/cutting-edge"
-import TransformBusinessSection from "@/components/transformbusiness"
+import Link from "next/link"
+import { Inter } from "next/font/google"
 
-export default async function Home() {
+import { PageRoutes } from "@/lib/pageroutes"
+import { buttonVariants } from "@/components/ui/button"
+
+const inter = Inter({ subsets: ["latin"] })
+
+
+export default function Home() {
   return (
-    <>
-      <Hero />
-      <main className="flex-1 flex flex-col gap-6 px-4">
-        <h2 className="font-medium text-xl mb-4">Next steps</h2>
-        {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-        <HeroSection />
-        <CuttingEdgeSection />
-        <TransformBusinessSection />
-      </main>
-    </>
-  );
+    <div className="min-h-[86.5vh] flex flex-col justify-center items-center text-center px-2 py-8">
+      <h1 className="text-4xl font-bold mb-4 sm:text-7xl">Documents</h1>
+      <p className="max-w-[600px] text-foreground mb-8 sm:text-base">
+        A simple open-source product documentation platform. That&apos;s simple
+        to use and easy to customize.
+      </p>
+      <div className="flex items-center gap-5">
+        <Link
+          href={`/docs${PageRoutes[0].href}`}
+          className={buttonVariants({ className: "px-6", size: "lg" })}
+        >
+          Get Started
+        </Link>
+      </div>
+    </div>
+  )
 }

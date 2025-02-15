@@ -4,11 +4,11 @@ import { LuArrowUpRight, LuGithub } from "react-icons/lu"
 
 import { buttonVariants } from "@/components/ui/button"
 import { SheetClose } from "@/components/ui/sheet"
-import Anchor from "@/app/docs/components/navigation/anchor"
-import { Logo } from "@/app/docs/components/navigation/logo"
-import Search from "@/app/docs/components/navigation/search"
-import { SheetLeft } from "@/app/docs/components/navigation/sidebar"
-import { ModeToggle } from "@/app/docs/components/navigation/theme-toggle"
+import Anchor from "@/app/components/navigation/anchor"
+import { Logo } from "@/app/components/navigation/logo"
+import Search from "@/app/components/navigation/search"
+import { SheetLeft } from "@/app/components/navigation/sidebar"
+import { ModeToggle } from "@/app/components/navigation/theme-toggle"
 
 export function Navbar() {
   return (
