@@ -9,52 +9,52 @@ const knowledgeAreas = [
     {
       title: "Project Integration Management",
       description: "Coordinating all aspects of a project to ensure its success.",
-      href: "/knowledge-areas/project-integration-management",
+      href: "/protected/knowledge-areas/project-integration-management",
     },
     {
       title: "Project Scope Management",
       description: "Defining and controlling what is and is not included in the project.",
-      href: "/knowledge-areas/project-scope-management",
+      href: "/protected/knowledge-areas/project-scope-management",
     },
     {
       title: "Project Schedule Management",
       description: "Managing the timely completion of the project.",
-      href: "/knowledge-areas/project-schedule-management",
+      href: "/protected/knowledge-areas/project-schedule-management",
     },
     {
       title: "Project Cost Management",
       description: "Planning, estimating, budgeting, financing, funding, and controlling costs.",
-      href: "/knowledge-areas/project-cost-management",
+      href: "/protected/knowledge-areas/project-cost-management",
     },
     {
       title: "Project Quality Management",
       description: "Ensuring that the project satisfies the needs for which it was undertaken.",
-      href: "/knowledge-areas/project-quality-management",
+      href: "/protected/knowledge-areas/project-quality-management",
     },
     {
       title: "Project Resource Management",
       description: "Identifying, acquiring, and managing resources needed for project success.",
-      href: "/knowledge-areas/project-resource-management",
+      href: "/protected/knowledge-areas/project-resource-management",
     },
     {
       title: "Project Communications Management",
       description: "Ensuring timely and appropriate generation, collection, and distribution of information.",
-      href: "/knowledge-areas/project-communications-management",
+      href: "/protected/knowledge-areas/project-communications-management",
     },
     {
       title: "Project Risk Management",
       description: "Identifying, analyzing, and responding to risks throughout the project lifecycle.",
-      href: "/knowledge-areas/project-risk-management",
+      href: "/protected/knowledge-areas/project-risk-management",
     },
     {
       title: "Project Procurement Management",
       description: "Acquiring goods and services from outside the performing organization.",
-      href: "/knowledge-areas/project-procurement-management",
+      href: "/protected/knowledge-areas/project-procurement-management",
     },
     {
       title: "Project Stakeholder Management",
       description: "Identifying and working with people who have an interest in the project.",
-      href: "/knowledge-areas/project-stakeholder-management",
+      href: "/protected/knowledge-areas/project-stakeholder-management",
     },
   ]
 

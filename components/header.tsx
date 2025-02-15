@@ -56,7 +56,10 @@ export default async function AuthButton() {
   return session ? ( // Check session instead of user
     <div className="flex items-center gap-4">
     <NavigationMenuDemo /> {/* Navigation menu for when user is logged in */} 
-          
+
+      <Link href="/protected/account" className="text-muted-foreground hover:text-foreground transition-colors">
+        Account
+      </Link>    
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
           Sign out
