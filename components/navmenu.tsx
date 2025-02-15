@@ -281,10 +281,10 @@ export function NavigationMenuDemo() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="protected/blog" title="Blog">
+              <ListItem href="posts" title="Blog">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="protected/docs" title="Documentation">
+              <ListItem href="docs" title="Documentation">
                 How to install dependencies and structure your app.
               </ListItem>
               
