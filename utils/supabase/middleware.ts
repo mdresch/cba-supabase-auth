@@ -40,7 +40,13 @@ export async function updateSession(request: NextRequest) {
   if (
     !user &&
     !request.nextUrl.pathname.startsWith('/sign-in') &&
-    !request.nextUrl.pathname.startsWith('/auth')
+    !request.nextUrl.pathname.startsWith('/auth') &&
+    !request.nextUrl.pathname.startsWith('/sign-up') &&
+    !request.nextUrl.pathname.startsWith('/reset-password') &&
+    !request.nextUrl.pathname.startsWith('/verify-email') &&
+    !request.nextUrl.pathname.startsWith('/sign-out') &&
+    !request.nextUrl.pathname.startsWith('/')
+
   ) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone()

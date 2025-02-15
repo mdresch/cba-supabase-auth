@@ -52,8 +52,8 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
 
 const computeDocumentPath = (slug: string) => {
   return Settings.gitload
-    ? `${GitHubLink.href}/raw/main/contents/docs/${slug}/index.mdx`
-    : path.join(process.cwd(), "/contents/docs/", `${slug}/index.mdx`)
+    ? `${GitHubLink.href}/contents/docs/${slug}/index.mdx`
+    : path.join(process.cwd(), "contents", "docs", `${slug}`, "index.mdx") // Removed leading "/"
 }
 
 const getDocumentPath = (() => {
@@ -82,6 +82,8 @@ export async function getDocument(slug: string) {
       rawMdx = await response.text()
       lastUpdated = response.headers.get("Last-Modified") ?? null
     } else {
+      const contentPath = getDocumentPath(slug)
+      console.log("Trying to read file at:", contentPath); // Ensure this is present 
       rawMdx = await fs.readFile(contentPath, "utf-8")
       const stats = await fs.stat(contentPath)
       lastUpdated = stats.mtime.toISOString()

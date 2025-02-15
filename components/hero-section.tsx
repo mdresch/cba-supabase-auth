@@ -11,7 +11,7 @@ export default function HeroSection() {
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to TechCorp</h1>
         <p className="text-xl md:text-2xl mb-8">Innovative solutions for modern businesses</p>
         <Button asChild size="lg">
-          <Link href="/contact">Get Started</Link>
+          <Link href="/protected/contact">Get Started</Link>
         </Button>
       </div>
     </div>
