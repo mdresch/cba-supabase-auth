@@ -52,7 +52,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
       <Analytics />
-      <meta name="algolia-site-verification"  content="95E54A0248920E7B" />
+      <meta name="algolia-site-verification"  content="521CA6544D8242DF" />
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
         suppressHydrationWarning
