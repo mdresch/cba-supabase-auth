@@ -6,6 +6,7 @@ import { Settings } from "@/lib/meta"
 import { Footer } from "@/app/components/navigation/footer"
 import { Navbar } from "@/app/components/navigation/navbar"
 import { ThemeProvider } from "./components/theme-provider"
+import { Analytics } from "@vercel/analytics/next"
 
 import "./globals.css"
 
@@ -50,6 +51,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
+      <Analytics />
+      <meta name="algolia-site-verification"  content="95E54A0248920E7B" />
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
         suppressHydrationWarning

@@ -4,7 +4,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-npx": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^15.1.7",
@@ -25,6 +28,7 @@
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "^2.48.1",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/og": "^0.6.5",
     "autoprefixer": "10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -62,6 +66,7 @@
     "@types/sanitize-html": "^2.13.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
+    "husky": "^9.1.7",
     "postcss": "8.4.49",
     "tailwind-merge": "^3.0.1",
     "tailwindcss": "3.4.17",
